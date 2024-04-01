@@ -70,9 +70,12 @@
 
 
 @media only screen and (max-width : 600px) {
+    .table_container {
+        justify-content: flex-start;
+    }
+    
     #data {
         width: 90%;
-        table-layout: fixed;
     }
 
     .uppgift {
