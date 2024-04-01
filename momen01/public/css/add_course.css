@@ -1,0 +1,50 @@
+.table_container {
+    padding: 20px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+thead th, tbody td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+thead th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+
+.kurs_länk {
+    color: black;
+    text-decoration: underline;
+    animation: none;
+    font-weight: 300;
+}
+
+.kurs_länk:after {
+    transition: none;
+    left: 0;
+    height: 0;
+}
+
+.kurs_länk:link {
+    color: blue;
+}
+
+.kurs_länk:visited {
+    color: rgb(52, 82, 52);
+}
