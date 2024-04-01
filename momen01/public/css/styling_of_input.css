@@ -97,10 +97,10 @@ label {
     width: 100%;
 }
 
-td {
+/* td {
     text-align: center;
     line-height: 1.4em;
-}
+} */
 
 .inputField {
     display: inline;
@@ -119,4 +119,4 @@ td {
 
 li::marker {
     color: rgb(0, 0, 0);
-  }
+}

@@ -10,12 +10,13 @@
 .uppgift {
     width: 60%;
     line-height: 1.4em;
-    font-family: Open Sans;
+    font-family: var(--second-font-family);
     background-color: white;
 }
 
 h1 {
     text-align: center;
+    text-transform: uppercase;
 }
 
 p {
@@ -23,10 +24,10 @@ p {
     font-size: 1.3em;
 }
 
-li {
+.lista {
     list-style: circle;
     padding-left: 20px;
-    
+    font-size: 1.1em;
 
 }
 

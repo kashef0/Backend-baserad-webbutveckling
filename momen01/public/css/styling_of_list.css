@@ -22,9 +22,8 @@ caption {
     font-size: 1.6em;
 }
 
-thead,
-tfoot {
-    background-color: rgb(228 240 245);
+thead {
+    background-color: rgb(211, 238, 249);
 }
 
 thead th, tbody td {
@@ -41,16 +40,20 @@ td {
 
 tbody td {
     text-align: center;
+    font-size: 1em;
+    font-family: var(--second-font-family);
+    color: black;
 }
 
 thead th {
-    background-color: #f2f2f2;
     text-align: center;
+    font-size: 1.2em;
+    
 }
 
 tbody > tr:nth-of-type(even) {
     background-color: rgb(237 238 242);
-  }
+}
 
 tbody tr:hover {
     background-color: #f2f2f2;
