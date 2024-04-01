@@ -1,0 +1,84 @@
+.table_container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+caption {
+    caption-side: top;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+thead,
+tfoot {
+    background-color: rgb(228 240 245);
+}
+
+thead th, tbody td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+th,
+td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
+
+tbody td {
+    text-align: center;
+}
+
+thead th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+  }
+
+tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+
+.kurs_länk {
+    color: black;
+    text-decoration: underline;
+    animation: none;
+    font-weight: 300;
+}
+
+.kurs_länk:after {
+    transition: none;
+    left: 0;
+    height: 0;
+}
+
+.kurs_länk:link {
+    color: blue;
+}
+
+.kurs_länk:visited {
+    color: rgb(28, 154, 28);
+}
+
+.kursID {
+    color: rgb(123, 5, 5);
+    font-weight: bold;
+}

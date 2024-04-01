@@ -107,3 +107,16 @@ td {
     visibility: collapse;
 }
 
+.error_list {
+    list-style: circle;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    color: red;
+    margin-left: 1.8em;
+}
+
+
+li::marker {
+    color: rgb(0, 0, 0);
+  }

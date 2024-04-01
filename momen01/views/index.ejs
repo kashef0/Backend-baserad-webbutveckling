@@ -40,6 +40,7 @@
     <main>
         <div class="table_container">
             <table id="data">
+                <caption>befintliga kurser</caption>
                 <thead>
                     <tr>
                         <th>Kurskod</th>
@@ -51,7 +52,7 @@
                 <tbody>
                     <% Data.forEach((data)=> { %>
                     <tr>
-                        <td><%= data.kurskod %></td>
+                        <td class="kursID"><%= data.kurskod %></td>
                         <td><%= data.kurs_name %></td>
                         <td><%= data.progression %></td>
                         <td><a class="kurs_länk" href="<%= data.kurs_url %>"><%= (data.kurs_name).slice(0, 4) %></a></td>
@@ -60,7 +61,6 @@
                 </tbody>
             </table>
         </div>    
-        
     </main>
 </body>
 </html>

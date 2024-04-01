@@ -55,7 +55,9 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/add_course", (req, res) => {
-    res.render("add_course");
+    res.render("add_course", {
+        errors : []
+    });
 });
 
 app.post("/add_course/add", (req, res) => {
@@ -66,16 +68,24 @@ app.post("/add_course/add", (req, res) => {
 
 
 app.post("/", async(req, res) => {
-    const kurskod = req.body.kurskod;
-    const kurs_name = req.body.kurs_name;
-    const Progression = req.body.Progression;
-    const kurs_url = req.body.kurs_url;
-    
+    let kurskod = req.body.kurskod;
+    let kurs_name = req.body.kurs_name;
+    let Progression = req.body.Progression;
+    let kurs_url = req.body.kurs_url;
+    let errors = [];
     // Validate kursKod field
-    // if (!kurskod || !kurs_name || !Progression || !kurs_url) {
-    //     return res.status(400).send("input value krävs");
-    // }
-
+    if(kurskod === "" ) {
+        errors.push("du måste fylla på kurskod fält");
+    }
+    if(kurs_name === "") {
+        errors.push("du måste ange namn");
+    }
+    if(Progression === "") {
+        errors.push("du måste välja Progression");
+    }
+    if(kurs_url === "") {
+        errors.push("du måste lägga till URL");
+    }
 
     // SQL query
     try {
@@ -84,9 +94,8 @@ app.post("/", async(req, res) => {
         res.redirect("/");
     } catch (error) {
         console.error("Error inserting data:", error);
-        // res.status(500).send("Error inserting data");
     }
-
+    res.render("add_course", { errors: errors });
 });
 
 

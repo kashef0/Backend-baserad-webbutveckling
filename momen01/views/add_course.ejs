@@ -40,8 +40,15 @@
     <main>
         <div class="container">
             <h2>moment01 - Backend-baserad webbutveckling</h2>
-            <% if(locals.error) { %>
-                    <p><%= error %></p>
+            <% if(locals.errors.length > 0) { %>
+                <ul class="error_list">
+                <% errors.forEach((error) => { %>
+                    <li>
+                        <%= error %>
+                    </li>
+
+                <% }) %>
+                </ul>
             <% } %>
             <form id="new" method="post" action="/">
                 <span class="inputSpan one">
@@ -69,9 +76,6 @@
                     <button class="btn" id="addBtn">Lägg till kurs</button>
                 </span>
             </form>
-            <div class="clearBTN">
-                <button id="clearbutton" class="btn">Rensa kurser</button>
-            </div>
             <p id="message"></p> 
     </main>
 </body>
