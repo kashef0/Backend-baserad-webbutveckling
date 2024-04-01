@@ -1,14 +1,14 @@
 
-const { Client } = require("pg");
-const express = require("express");
-const bodyParser = require("body-parser");  // mölijghet att läsa in form-data
+const { Client } = require("pg");                //  importera Client-objektet från pg-paketet'
+const express = require("express");              // importera express-ramverket
+const bodyParser = require("body-parser");      // mölijghet att läsa in form-data
 
 require("dotenv").config();
 
 const app = express();
-app.set("view engine", "ejs");              // view engine: ejs
-app.use(express.static("public"));             // statiska filer i katalog "public"
-app.use(express.urlencoded({extended: true}));
+app.set("view engine", "ejs");                      // view engine: ejs
+app.use(express.static("public"));                  // statiska filer i katalog "public"
+app.use(express.urlencoded({extended: true}));          
 app.use(bodyParser.urlencoded({extended: true}));
 
 const port = process.env.port | 3000;
@@ -49,14 +49,15 @@ app.get("/", async (req, res) => {
     });
 });
 
-
+// GET-routing för about sökvägen
 app.get("/about", (req, res) => {
     res.render("about");
 });
 
+
 app.get("/add_course", (req, res) => {
     res.render("add_course", {
-        errors : []
+        errors : []  // tomma arrayen skickas till vyn vid felmeddelande
     });
 });
 
@@ -66,12 +67,12 @@ app.post("/add_course/add", (req, res) => {
 
 
 
-
+// hantera  POST-begäran till rotvägen "/"
 app.post("/", async(req, res) => {
-    let kurskod = req.body.kurskod;
-    let kurs_name = req.body.kurs_name;
-    let Progression = req.body.Progression;
-    let kurs_url = req.body.kurs_url;
+    let kurskod = req.body.coursecode;
+    let kurs_name = req.body.coursename;
+    let Progression = req.body.progression;
+    let kurs_url = req.body.syllabus;
     let errors = [];
     // Validate kursKod field
     if(kurskod === "" ) {
@@ -98,7 +99,7 @@ app.post("/", async(req, res) => {
     res.render("add_course", { errors: errors });
 });
 
-
+// skapa en server som lyssnar på en port
 app.listen(process.env.PORT,  ()=> {
     console.log("server started on port" + process.env.PORT);
 });

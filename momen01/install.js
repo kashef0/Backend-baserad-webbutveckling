@@ -14,6 +14,7 @@ const client = new Client({
     },
 });
 
+//visa fel meddelande vid felanslutning till databasen
 
 client.connect((err) => {
     if(err) {
@@ -26,15 +27,14 @@ client.connect((err) => {
 
 // skapa tabell
 
-
 client.query(
     `
     DROP TABLE IF EXISTS kursData;
     create table kursData(
-        kursKod    VARCHAR(10) primary key NOT NULL,
-        kurs_name   VARCHAR(50) NOT NULL,
-        Progression CHAR(1) NOT NULL,
-        kurs_url    VARCHAR(255) NOT NULL,
+        coursecode    VARCHAR(10) primary key NOT NULL,
+        coursename   VARCHAR(50) NOT NULL,
+        progression  CHAR(1) NOT NULL,
+        syllabus    VARCHAR(255) NOT NULL,
         created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
     )`
