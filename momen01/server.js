@@ -67,7 +67,6 @@ app.post("/add_course/add", (req, res) => {
 
 
 
-// hantera  POST-begäran till rotvägen "/"
 app.post("/", async(req, res) => {
     let kurskod = req.body.coursecode;
     let kurs_name = req.body.coursename;
@@ -88,20 +87,24 @@ app.post("/", async(req, res) => {
         errors.push("du måste lägga till URL");
     }
 
-    if (errors.length > 0) {
-        res.render("add_course", { errors: errors });
-    }
-
-    // SQL query
-    try {
-        const getData = await client.query("INSERT INTO kursData(kursKod, kurs_name, Progression, kurs_url) VALUES($1, $2, $3, $4)",
-        [kurskod, kurs_name, Progression, kurs_url]);
-        res.redirect("/");
-    } catch (error) {
-        console.error("Error inserting data:", error);
+    if (errors.length === 0) {
+        try {
+            // SQL query
+            const getData = await client.query("INSERT INTO kursData(coursecode, coursename, progression, syllabus) VALUES($1, $2, $3, $4)",
+            [kurskod, kurs_name, Progression, kurs_url]);
+            res.redirect("/");
+            return;
+        } catch (error) {
+            console.error("Error inserting data:", error);
+            errors.push("du måste fylla på alla fälten")
+        }
     }
     
+    res.render("add_course", { errors: errors });
+    
+    
 });
+
 
 // skapa en server som lyssnar på en port
 app.listen(process.env.PORT,  ()=> {
