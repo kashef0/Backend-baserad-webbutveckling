@@ -88,6 +88,10 @@ app.post("/", async(req, res) => {
         errors.push("du måste lägga till URL");
     }
 
+    if (errors.length > 0) {
+        res.render("add_course", { errors: errors });
+    }
+
     // SQL query
     try {
         const getData = await client.query("INSERT INTO kursData(kursKod, kurs_name, Progression, kurs_url) VALUES($1, $2, $3, $4)",
@@ -96,7 +100,7 @@ app.post("/", async(req, res) => {
     } catch (error) {
         console.error("Error inserting data:", error);
     }
-    res.render("add_course", { errors: errors });
+    
 });
 
 // skapa en server som lyssnar på en port
