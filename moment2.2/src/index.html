@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/main.js" type="module"></script>
+</head>
+<body>
+    <header id="scroll_function">
+        <section class="header-section">
+            <h2 class="logo" tabindex="0" onclick='window.location.href = "./index.html"'><img id="mainlogo" alt="movie lovers logo"></h2>
+        </section>
+        <button class="menuBtn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <nav id="nav-menu">
+            <button class="menuBtn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">stäng</span>
+            </button>
+            <ul>
+                <li class="links"><a class="action" href="/src/index.html">Startsida</a></li>
+                <li class="links"><a href="/src/html/add_data.html">Add list</a></li>
+                <li class="links"><a href="#">Om Sass</a></li>
+                <li class="links"><a href="#">kontakt</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <h1>my page</h1>
+    <form id="add_data" method="post">
+        <label for="company_name">företagetsnamn: </label>
+        <input type="text" id="company_name" name="company_name" placeholder="Company Name">
+        <label for="job_title">Jobbstitle: </label>
+        <input type="text" id="job_title" name="job_title" placeholder="Job Title">
+        <label for="location">Plats: </label>
+        <input type="text" id="location" name="location" placeholder="Location">
+        <label for="start_date">Startdatum: </label>
+        <input type="text" id="start_date" name="start_date" placeholder="Start Date">
+        <label for="end_date">Slutdatum: </label>
+        <input type="text" id="end_date" name="end_date" placeholder="End Date">
+        <label for="description">Beskrivning: </label>
+        <input type="text" id="description" name="description" placeholder="Description">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="created_list"></div>
+</body>
+</html>
