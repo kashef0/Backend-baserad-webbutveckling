@@ -3,7 +3,7 @@
 Detta repository innehåller koden för ett enklare REST API byggt med Express. APIet är skapat för att hantera arbetslivserfarenheter, inklusive lagring, uppdatering och radering av dessa. Grundläggande funktionalitet för CRUD (Create, Read, Update, Delete) är implementerad.
 
 ## Länk
-En liveversion av APIet finns tillgänglig på följande URL: [https://my-api-moment2.1.com/api/workexperience](http://localhost:3000/api/workexperience)
+En liveversion av APIet finns tillgänglig på följande URL: [https://backend-baserad-webbutveckling-2.onrender.com/api/workexperience](https://backend-baserad-webbutveckling-2.onrender.com/api/workexperience)
 
 ## Installation och databas
 APIet använder en PostgreSQL-databas. För att komma igång, följ dessa steg:

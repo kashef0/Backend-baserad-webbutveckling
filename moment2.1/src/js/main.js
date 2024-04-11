@@ -1,6 +1,6 @@
 "use strict";
 
-const url ="http://127.0.0.1:3000/api/workexperience";
+const url ="https://backend-baserad-webbutveckling-2.onrender.com/api/workexperience";
 
 
 async function getdata() {
