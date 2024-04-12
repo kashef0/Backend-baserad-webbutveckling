@@ -1,0 +1,22 @@
+main {
+    width: 100%;
+    padding-top: 60px;
+}
+
+#created_list {
+    width: 100%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vw;
+
+    .unorderList {
+        width: 31.33%;
+        list-style: none;
+        padding: 10px;
+        background-color: whitesmoke;
+    }
+}
+
+
