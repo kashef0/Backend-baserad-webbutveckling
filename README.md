@@ -1,43 +1,25 @@
-# API för Arbetslivserfarenhet
+# Beskrivning av lösning
 
-Detta repository innehåller koden för ett enklare REST API byggt med Express. APIet är skapat för att hantera arbetslivserfarenheter, inklusive lagring, uppdatering och radering av dessa. Grundläggande funktionalitet för CRUD (Create, Read, Update, Delete) är implementerad.
+## Funktioner för Interaktion med Data
 
-## Länk
-En liveversion av APIet finns tillgänglig på följande URL: [https://my-api-moment2.1.com/api/workexperience](http://localhost:3000/api/workexperience)
+### addData-funktionen
 
-## Installation och databas
-APIet använder en PostgreSQL-databas. För att komma igång, följ dessa steg:
+Detta är en asynkron funktion som aktiveras när användaren skickar formuläret för att lägga till ny arbetslivserfarenhet. Följande steg utförs av funktionen:
 
-1. Klona ner källkodsfilerna.
-2. Kör kommandot `npm install` för att installera nödvändiga npm-paket.
-3. Ange miljövariabler i en `.env.sample`-fil enligt följande exempel:
-DB_HOST=localhost
-DB_PORT=5432
-DB_USERNAME=myusername
-DB_PASSWORD=mypassword
-DB_DATABASE=mydatabase
+1. Funktionen kommer att läsa värdena av företagsnamn, jobbtitel, ort, startdatum, slutdatum och beskrivning från fälten på formuläret.
+2. POST request skickas till den angivna URL med insamlade data i JSON-format i request bodyn.
+3. Om svaret är lyckat, flyttas användaren tillbaka till index.html-sidan där de kan se den uppdaterade listan av arbetslivserfarenheter.
 
-4. Kör kommandot `npm run start` för att starta APIet.
+### deleteData-funktionen
 
-## Användning
-Nedan beskrivs hur man använder APIet på olika sätt:
+Detta är funktionen som använder 'Delete' metoden för att ta bort data från en databas genom att ansluta till en webbtjänst. Utan att ladda om sidan kan radering ske användande Fetch API och asynkron JavaScript.
 
-| Metod | Ändpunkt               | Beskrivning                                           |
-|-------|------------------------|-------------------------------------------------------|
-| GET   | /api/workexperience   | Hämtar alla tillgängliga arbetslivserfarenheter.      |
-| POST  | /api/workexperience   | Lagrar en ny arbetslivserfarenhet. Kräver att ett arbetslivserfarenhets-objekt skickas med. |
-| PUT   | /api/workexperience/:id | Uppdaterar en existerande arbetslivserfarenhet med angivet ID. Kräver att ett arbetslivserfarenhets-objekt skickas med. |
-| DELETE| /api/workexperience/:id | Raderar en arbetslivserfarenhet med angivet ID.        |
+Parametern som funktionen tar emot är ett händelseobjekt och sedan extraherar den värdet av knappen 'rowId' med hjälp av dataset. Därefter hämtas referensen till HTML-elementet som representerar raden som ska tas bort baserat på rowId. Slutligen skickas en DELETE-begäran till den angivna API:en.
 
-Ett arbetslivserfarenhets-objekt ska skickas och returneras i JSON-format med följande struktur:
+### visaData-funktionen
 
-```json
-{
-  "company_name": "Lokal Livsmedelsbutik",
-  "job_title": "Butikssäljare",
-  "location": "Göteborg, Sverige",
-  "start_date": "2021-04-15",
-  "end_date": "2022-09-30",
-  "description": "Ansvarig för kundservice, kassahantering och varuexponering."
-}
+När allt DOM-innehåll har laddats fungerar en funktion med en eventlyssnare för att säkerställa att alla nödvändiga element är tillgängliga innan någon interaktion som händer. Sedan hämtas referensen i dom-trädet. Formuläret som har id 'add_data' erhålls då, vilket innebär att vi kan ansluta formuläret till en händelselyssnare och hantera användarinmatningsdata genom det. Efter det gör jag en GET-förfrågan för att hämta befintlig data från webbtjänsten genom att skicka begäran till den angivna URLen. Om begäran är framgångsrik, tolkas svaret som JSON och funktionen 'visaData' anropas med de erhållna dataraderna för att visa dem på webbsidan.
 
+
+## Testkörning
+Du kan testköra webbapplikationen genom att besöka den länken [Jobb List](https://moment2-2--jobb-erfarenhet.netlify.app/)
