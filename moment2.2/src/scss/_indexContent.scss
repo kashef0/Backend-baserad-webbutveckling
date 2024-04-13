@@ -1,22 +1,54 @@
+@use 'variables' as *;
+
 main {
     width: 100%;
-    padding-top: 60px;
-}
+    
 
-#created_list {
-    width: 100%;
-    padding-left: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1vw;
+    #created_list {
+        width: 100%;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2vw 1vw;
+    
+        .unorderList {
+            width: 31.33%;
+            list-style: none;
+            padding: 10px;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 10px;
+            font-family: $main-font-family;
+            font-weight: 600;
+        }
+    
+        .del_BTN {
+            width: 33%;
+            cursor: pointer;
+            background-color: rgb(183, 174, 172);
+            padding: 5px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            font-family: $second-font-family;
+        }
+    
+        .del_BTN:hover {
+            background-color: $hover-color;
+            color: white;
+            border-color: $bars-color;
+            box-shadow: 6px 6px 8px grey;
+        }
 
-    .unorderList {
-        width: 31.33%;
-        list-style: none;
-        padding: 10px;
-        background-color: whitesmoke;
     }
+    
+    h1 {
+        @extend %Rubrik_style ;
+    }
+    
 }
 
 

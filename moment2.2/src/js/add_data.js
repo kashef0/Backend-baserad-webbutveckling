@@ -14,6 +14,7 @@ async function addData(event) {
     const start_date = document.getElementById('start_date').value;
     const end_date = document.getElementById('end_date').value;
     const description = document.getElementById('description').value;
+    const dateError = document.getElementById("error");
 
     const postData = {
         company_name: company_name,
@@ -23,6 +24,18 @@ async function addData(event) {
         end_date: end_date,
         description: description
     };
+    // function för att Dela upp datumsträngen och konvertera dem till siffror
+    function convertDateStr(dateStr) {
+        const [year, month, date] = dateStr.split('-').map(Number) 
+        return new Date(year, month - 1, date)
+        }
+    const startDate = convertDateStr(start_date);
+    const endDate = convertDateStr(end_date);
+    // Kontrollera om slutdatum kommer före startdatum
+    if (endDate.valueOf() < startDate.valueOf()) {
+        dateError.innerHTML = "Slutdatum är före startdatum!";
+        throw new Error('Slutdatum är före startdatum!');
+    }
 
     try {
         const response = await fetch(url, {
@@ -38,6 +51,8 @@ async function addData(event) {
         } else {
             window.location.href = "./index.html";
         }
+
+        
 
         const responseData = await response.json();
         console.log(responseData);

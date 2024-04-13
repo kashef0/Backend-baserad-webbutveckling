@@ -9,8 +9,22 @@ header {
     position: relative;
     font-family: $main-font-family;
     font-weight: 700;
-    position: fixed;
+    position: relative;
     z-index: 1;
+
+    .header-section {
+        display: flex;
+        align-self: center;
+        
+    }
+
+    .logo {
+        margin-left: 10px;
+        color: white;
+        font-family: $second-font-family;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
 }
 
 nav {
@@ -18,12 +32,13 @@ nav {
     font-size: 1.3em;
     display: none;
     list-style: none;
-    position: absolute;
+    position: fixed;
     width: 250px;
     white-space: nowrap;
     z-index: 1;
     top: 0;
     right: 0;
+    background-color: #131d2d;
 
     ul {
         width: 100%;

@@ -3,7 +3,7 @@ const url = "https://backend-baserad-webbutveckling-2.onrender.com/api/workexper
 // funktion för att radera en rad data
 async function deleteData(event) {
     const button = event.target;
-    const rowId = button.dataset.rowId;                     // Extract row ID from data attribute
+    const rowId = button.dataset.rowId;                
     const rowEl = document.getElementById(`row-${rowId}`);
     console.log(rowEl);
     try {
