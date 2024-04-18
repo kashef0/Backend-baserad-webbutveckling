@@ -49,7 +49,7 @@ async function addData(event) {
         if (!response.ok) {
             throw new Error(`ingen response! Status: ${response.status}`);
         } else {
-            window.location.href = "./index.html";
+            window.location.href = "/";
         }
 
         
