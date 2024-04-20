@@ -15,7 +15,7 @@ async function addData(event) {
     const end_date = document.getElementById('end_date').value;
     const description = document.getElementById('description').value;
     const dateError = document.getElementById("error");
-
+    
     const postData = {
         company_name: company_name,
         job_title: job_title,
@@ -38,54 +38,77 @@ async function addData(event) {
     }
 
     if (company_name === "") {
-        document.getElementById('company_name_error').innerHTML = "du måste ange company_name";
+        document.getElementById('company_name_error').innerHTML = "du måste ange företagetsnamn";
     } else {
         document.getElementById('company_name_error').innerHTML = "";
     }
     if (job_title === "") {
-        document.getElementById('job_title_error').innerHTML = "du måste ange job_title";
+        document.getElementById('job_title_error').innerHTML = "du måste ange Jobbstitle";
     } else {
         document.getElementById('job_title_error').innerHTML = "";
     }
     if (location === "") {
-        document.getElementById('location_error').innerHTML = "du måste ange location";
+        document.getElementById('location_error').innerHTML = "du måste ange Ort";
     } else {
         document.getElementById('location_error').innerHTML = "";
     }
+    if (start_date === "") {
+        console.log(start_date);
+        document.getElementById('Startdatum_error').innerHTML = "du måste ange Startdatum";
+    } else {
+        document.getElementById('Startdatum_error').innerHTML = "";
+    }
+    if (end_date === "") {
+        document.getElementById('error').innerHTML = "du måste ange Startdatum";
+    } else {
+        document.getElementById('error').innerHTML = "";
+    }
     if (description === "") {
-        document.getElementById('description_error').innerHTML = "du måste ange description";
+        document.getElementById('description_error').innerHTML = "du måste ange Beskrivning";
     } else {
         document.getElementById('description_error').innerHTML = "";
     }
 
-    try {
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(postData)
-        });
-
-        if (!response.ok) {
-            throw new Error(`ingen response! Status: ${response.status}`);
-        } else {
-            window.location.href = "/";
+    const errorElements = document.querySelectorAll(".error");
+    let hasErrors = false;
+    errorElements.forEach(element => {
+        if (element.innerHTML !== "") {
+            hasErrors = true;
         }
+    });
 
-        
-
-        const responseData = await response.json();
-        console.log(responseData);
-
-        // Uppdatera och visa data efter tilläggning av ny data
-        getData();
-        // Rensa formuläret
-        form.reset();
-        
-    } catch (error) {
-        console.error("Det gick inte att lägga till data status:", error);
+    if (!hasErrors) {
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(postData)
+            });
+    
+            if (!response.ok) {
+                throw new Error(`ingen response! Status: ${response.status}`);
+            } else {
+                window.location.href = "/";
+            }
+    
+            
+    
+            const responseData = await response.json();
+            console.log(responseData);
+    
+            // Uppdatera och visa data efter tilläggning av ny data
+            getData();
+            // Rensa formuläret
+            form.reset();
+            
+        } catch (error) {
+            console.error("Det gick inte att lägga till data status:", error);
+        }
     }
+
+    
 };
 
 export { addData };

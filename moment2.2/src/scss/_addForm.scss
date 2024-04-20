@@ -73,6 +73,11 @@ label {
     color: red;
 }
 
+#company_name_error, #job_title_error, #location_error,
+#description_error, #Startdatum_error {
+    color: red;
+    padding: 5px 0 0 5px;
+}
 
 }
 
