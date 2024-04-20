@@ -37,6 +37,27 @@ async function addData(event) {
         throw new Error('Slutdatum är före startdatum!');
     }
 
+    if (company_name === "") {
+        document.getElementById('company_name_error').innerHTML = "du måste ange company_name";
+    } else {
+        document.getElementById('company_name_error').innerHTML = "";
+    }
+    if (job_title === "") {
+        document.getElementById('job_title_error').innerHTML = "du måste ange job_title";
+    } else {
+        document.getElementById('job_title_error').innerHTML = "";
+    }
+    if (location === "") {
+        document.getElementById('location_error').innerHTML = "du måste ange location";
+    } else {
+        document.getElementById('location_error').innerHTML = "";
+    }
+    if (description === "") {
+        document.getElementById('description_error').innerHTML = "du måste ange description";
+    } else {
+        document.getElementById('description_error').innerHTML = "";
+    }
+
     try {
         const response = await fetch(url, {
             method: "POST",
