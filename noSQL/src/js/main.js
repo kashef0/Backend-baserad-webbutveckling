@@ -3,7 +3,7 @@ import { addData } from './add_data.js';
 import { deleteData } from './del_data.js';
 import { visaData } from './visa_data.js';
 import { toggleMenu } from './navmenu.js';
-const url = "mongodb+srv://dbcompany:qw9wi6JLMGY1vjj8@atlascluster.egpcvs9.mongodb.net/?retryWrites=true&w=majority";
+const url = "https://backend-baserad-webbutveckling-9.onrender.com/jobbs";
 
 
 document.addEventListener('DOMContentLoaded', async function() {

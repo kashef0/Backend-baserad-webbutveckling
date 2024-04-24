@@ -1,6 +1,6 @@
 "use strict";
 
-const url = "mongodb+srv://dbcompany:qw9wi6JLMGY1vjj8@atlascluster.egpcvs9.mongodb.net/?retryWrites=true&w=majority";
+const url = "https://backend-baserad-webbutveckling-9.onrender.com/jobbs";
 
 
 // Funktion för att lägga till ny data

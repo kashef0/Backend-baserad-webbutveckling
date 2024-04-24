@@ -112,7 +112,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-require('dotenv').config();
+// require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -121,9 +121,9 @@ app.use(cors());
 app.use(express.json());
 
 
-
+MONGODB_URI="mongodb+srv://dbcompany:4BZaVjgUEAvYByCN@atlascluster.egpcvs9.mongodb.net/?retryWrites=true&w=majority"
 // Anslut till MongoDB
-mongoose.connect(process.env.MONGODB_URI).then(() => {
+mongoose.connect(MONGODB_URI).then(() => {
     console.log("Ansluten till MongoDB");
 }).catch((error) => {
     console.error("Fel vid anslutning till MongoDB:", error);
@@ -133,7 +133,7 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 const jobbSchema = new mongoose.Schema({
     company_name: {
         type: String,
-        required: true
+        required: true,
     },
     job_title: {
         type: String,
@@ -161,12 +161,12 @@ const jobbSchema = new mongoose.Schema({
     }
 });
 
-const Jobb = mongoose.model("Jobb", jobbSchema); // Uppdaterat modellnamn till singular form
+const Jobb = mongoose.model("companies", jobbSchema); // Uppdaterat modellnamn till singular form
 
-// Definiera routerna
+
 
 // Visa alla jobb
-app.get("/jobbs", async (req, res) => {
+app.get("/company", async (req, res) => {
     try {
         let resultat = await Jobb.find({});
         return res.json(resultat);
@@ -176,7 +176,7 @@ app.get("/jobbs", async (req, res) => {
 });
 
 // Lägg till ett jobb
-app.post("/jobbs", async (req, res) => {
+app.post("/company", async (req, res) => {
     try {
         let result = await Jobb.create(req.body);
         res.status(200).json({ message: "Jobb har lagts till", result });
@@ -187,7 +187,7 @@ app.post("/jobbs", async (req, res) => {
 });
 
 // Uppdatera ett jobb via id
-app.put("/jobbs/:id", async (req, res) => {
+app.put("/company/:id", async (req, res) => {
     try {
         const updatedJobb = await Jobb.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.json(updatedJobb);
@@ -198,7 +198,7 @@ app.put("/jobbs/:id", async (req, res) => {
 });
 
 // Radera ett jobb via ID
-app.delete("/jobbs/:id", async (req, res) => {
+app.delete("/company/:id", async (req, res) => {
     try {
         const deletedJobb = await Jobb.findByIdAndDelete(req.params.id);
         res.json({ message: "Jobb raderades framgångsrikt", deletedJobb });
