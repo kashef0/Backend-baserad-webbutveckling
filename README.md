@@ -1,25 +1,43 @@
-# Beskrivning av lösning
+# MongoDB-baserat REST API för Arbetslivserfarenhet
 
-## Funktioner för Interaktion med Data
+En liveversion av APIet finns tillgänglig på följande URL: [API-webbtjänst](https://backend-baserad-webbutveckling-13.onrender.com/api/company)
 
-### addData-funktionen
+Detta projekt innehåller koden för ett REST API byggt med Node.js och Express, som hanterar arbetslivserfarenheter med en MongoDB-databas.
 
-Detta är en asynkron funktion som aktiveras när användaren skickar formuläret för att lägga till ny arbetslivserfarenhet. Följande steg utförs av funktionen:
+## Installation och Start
 
-1. Funktionen kommer att läsa värdena av företagsnamn, jobbtitel, ort, startdatum, slutdatum och beskrivning från fälten på formuläret.
-2. POST request skickas till den angivna URL med insamlade data i JSON-format i request bodyn.
-3. Om svaret är lyckat, flyttas användaren tillbaka till index.html-sidan där de kan se den uppdaterade listan av arbetslivserfarenheter.
+För att komma igång med API:et, se till att du har Node.js och npm installerat på din dator. Klona sedan ned projektet och installera alla nödvändiga paket genom att köra:
 
-### deleteData-funktionen
+* npm install express cors mongoose 
+* npm install nodemon -dev
 
-Detta är funktionen som använder 'Delete' metoden för att ta bort data från en databas genom att ansluta till en webbtjänst. Utan att ladda om sidan kan radering ske användande Fetch API och asynkron JavaScript.
+Efter installationen kan du starta servern med kommandot: 
+* node server.js
 
-Parametern som funktionen tar emot är ett händelseobjekt och sedan extraherar den värdet av knappen 'rowId' med hjälp av dataset. Därefter hämtas referensen till HTML-elementet som representerar raden som ska tas bort baserat på rowId. Slutligen skickas en DELETE-begäran till den angivna API:en.
+### Anslutning till MongoDB
 
-### visaData-funktionen
+ för att skapa en anslutning till en MongoDB-databas. Detta görs genom att använda mongoose.connect()-funktionen och passera URI:en till MongoDB-databasen som argument.
 
-När allt DOM-innehåll har laddats fungerar en funktion med en eventlyssnare för att säkerställa att alla nödvändiga element är tillgängliga innan någon interaktion som händer. Sedan hämtas referensen i dom-trädet. Formuläret som har id 'add_data' erhålls då, vilket innebär att vi kan ansluta formuläret till en händelselyssnare och hantera användarinmatningsdata genom det. Efter det gör jag en GET-förfrågan för att hämta befintlig data från webbtjänsten genom att skicka begäran till den angivna URLen. Om begäran är framgångsrik, tolkas svaret som JSON och funktionen 'visaData' anropas med de erhållna dataraderna för att visa dem på webbsidan.
+### Endpoint-rutter
 
+API:et har följande endpoint-rutter för att hantera arbetslivserfarenheter:
 
-## Testkörning
-Du kan testköra webbapplikationen genom att besöka den länken [Jobb List](https://moment2-2--jobb-erfarenhet.netlify.app/)
+- `GET /api/company`: Hämtar alla tillgängliga arbetslivserfarenheter.
+- `POST /company`: Skapar en ny arbetslivserfarenhet.
+- `PUT /company/:id`: Uppdaterar en existerande arbetslivserfarenhet med ett angivet ID.
+- `DELETE /company/:id`: Raderar en arbetslivserfarenhet med ett angivet ID.
+
+### Arbetslivserfarenhets-objekt
+
+För att lägga till eller uppdatera en arbetslivserfarenhet, används JSON-format med följande struktur:
+
+```json
+{
+  "company_name": "Företagsnamn",
+  "job_title": "Titel",
+  "location": "Plats",
+  "start_date": "Startdatum",
+  "end_date": "Slutdatum",
+  "description": "Beskrivning av arbetsuppgifter"
+}
+
