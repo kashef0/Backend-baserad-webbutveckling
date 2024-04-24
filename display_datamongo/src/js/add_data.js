@@ -1,6 +1,6 @@
 "use strict";
 
-const url = "https://backend-baserad-webbutveckling-9.onrender.com/company";
+const url = "https://backend-baserad-webbutveckling-13.onrender.com/company";
 
 
 // Funktion för att lägga till ny data

@@ -4,7 +4,7 @@ import { deleteData } from './del_data.js';
 import { visaData } from './visa_data.js';
 import { toggleMenu } from './navmenu.js';
 
-const url = "https://backend-baserad-webbutveckling-9.onrender.com/company";
+const url = "https://backend-baserad-webbutveckling-13.onrender.com/api/company";
 
 document.addEventListener('DOMContentLoaded', async function() {
     const form = document.getElementById('add_data');
