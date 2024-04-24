@@ -20,10 +20,10 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 });
 
 // Anslut till MongoDB med MongoClient (direkt anslutning)
-// const username = encodeURIComponent(process.env.MONGODB_USERNAME);
-// const password = encodeURIComponent(process.env.MONGODB_PASSWORD);
-// const cluster = process.env.MONGODB_CLUSTER;
-// const dbName = process.env.MONGODB_DBNAME;
+const username = encodeURIComponent(process.env.MONGODB_USERNAME);
+const password = encodeURIComponent(process.env.MONGODB_PASSWORD);
+const cluster = process.env.MONGODB_CLUSTER;
+const dbName = process.env.MONGODB_DBNAME;
 const uri = `mongodb+srv://dbcompany:4BZaVjgUEAvYByCN@atlascluster.egpcvs9.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
