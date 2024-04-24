@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    box-shadow: 5px 6px 8px black;
+
+    h2 {
+        font-family: $second-font-family;
+        font-size: 1.4em;
+    }
+
+    p {
+        font-family: $main-font-family;
+        padding: 5px 0;
+    }
+
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Data</title>
+    <link rel="stylesheet" href="/src/scss/main.scss">
+    <script src="/src/js/main.js" type="module"></script>
+</head>
+<body>
+    <header id="scroll_function">
+        <section class="header-section">
+            <h2 class="logo" tabindex="0" onclick='window.location.href = "./index.html"'>webbtjänster</h2>
+        </section>
+        <button class="menuBtn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <nav id="nav-menu">
+            <button class="menuBtn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">stäng</span>
+            </button>
+            <ul>
+                <li class="links"><a href="/src/index.html">Startsida</a></li>
+                <li class="links"><a class="action" href="#">Add-list</a></li>
+                <li class="links"><a href="/src/html/about.html">Om Webbplats</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Lägg till jobb</h1>
+    <form id="add_data" class="container" method="post">
+        <span class="inputSpan">
+            <label for="company_name">företagetsnamn: </label>
+            <input type="text" id="company_name" name="company_name" placeholder="Company Name">
+            <span id="company_name_error" class="error"></span>
+        </span>
+        <span class="inputSpan">
+            <label for="job_title">Jobbstitle: </label>
+            <input type="text" id="job_title" name="job_title" placeholder="Job Title">
+            <span id="job_title_error" class="error"></span>
+        </span>
+        <span class="inputSpan">
+            <label for="location">Ort: </label>
+            <input type="text" id="location" name="location" placeholder="Location">
+            <span id="location_error" class="error"></span>
+        </span>
+        <span class="inputSpan">
+            <label for="start_date">Startdatum: </label>
+            <input type="date" id="start_date" name="start_date" placeholder="Start Date">
+            <span class="error" id="Startdatum_error"></span>
+        </span>
+        <span class="inputSpan">
+            <label for="end_date">Slutdatum: </label>
+            <input type="date" id="end_date" name="end_date" placeholder="End Date">
+            <span id="error" class="error"></span>
+        </span>
+        <span class="inputSpan">
+            <label for="description">Beskrivning: </label>
+            <input type="text" id="description" name="description" placeholder="Description">
+            <span id="description_error" class="error"></span>
+        </span>
+        <span class="inputSpan"> 
+            <button type="submit" class="btn">Submit</button>
+        </span>
+        
+    </form>
+</body>
+</html>

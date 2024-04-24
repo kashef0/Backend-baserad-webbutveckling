@@ -1,0 +1,86 @@
+@use 'variables' as *;
+
+.container { 
+    width: 50%;
+    padding: 2%;
+    margin: 1em auto 1em auto;
+    max-width: 960px; 
+    background-color: #fff;
+    box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+    border-radius: .3em;
+
+    
+.btn {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    margin-left: .35em;
+    padding: 0 1em 0 1em;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: .25rem;
+    border: 0;
+    text-decoration: none;
+    color: #fff;
+    background-color: #12831f;
+}
+.btn:hover {
+    background-color: #802D00;
+}
+
+
+input[type="text"], input[type="date"] {
+    
+    padding: 15px 0;
+    border-radius: .25rem;
+    border: 2px solid #ccc;
+    height: 25px;
+    margin-left: 5px;
+    width: 90%;
+    transition: 0.5s;
+    outline: none;
+    text-indent: 3px;
+    
+}
+
+input[type=text]:focus {
+    border: 2px solid rgb(213, 52, 23);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: .5em;
+    width: 25%;
+    font-size: calc(.5em + 50%);
+    font-family: $second-font-family;
+    font-weight: 500;
+}
+
+
+.inputSpan, #error {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    justify-content: end;
+}
+
+#error {
+    color: red;
+}
+
+#company_name_error, #job_title_error, #location_error,
+#description_error, #Startdatum_error {
+    color: red;
+    padding: 5px 0 0 5px;
+}
+
+}
+
+h1 {
+    @extend %Rubrik_style ;
+}
