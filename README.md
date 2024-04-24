@@ -22,4 +22,4 @@ När allt DOM-innehåll har laddats fungerar en funktion med en eventlyssnare f�
 
 
 ## Testkörning
-Du kan testköra webbapplikationen genom att besöka den länken [Jobb List](https://moment2-2--jobb-erfarenhet.netlify.app/)
+Du kan testköra webbapplikationen genom att besöka den länken [Jobb List](https://display-api-data--majestic-pithivier-849516.netlify.app/)
