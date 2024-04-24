@@ -1,5 +1,5 @@
 
-const url = "https://backend-baserad-webbutveckling-2.onrender.com/api/workexperience";
+const url = "mongodb+srv://dbcompany:qw9wi6JLMGY1vjj8@atlascluster.egpcvs9.mongodb.net/?retryWrites=true&w=majority";
 // funktion för att radera en rad data
 async function deleteData(event) {
     const button = event.target;

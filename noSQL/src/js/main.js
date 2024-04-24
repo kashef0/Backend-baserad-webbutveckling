@@ -3,7 +3,7 @@ import { addData } from './add_data.js';
 import { deleteData } from './del_data.js';
 import { visaData } from './visa_data.js';
 import { toggleMenu } from './navmenu.js';
-const url = "https://backend-baserad-webbutveckling-2.onrender.com/api/workexperience";
+const url = "mongodb+srv://dbcompany:qw9wi6JLMGY1vjj8@atlascluster.egpcvs9.mongodb.net/?retryWrites=true&w=majority";
 
 
 document.addEventListener('DOMContentLoaded', async function() {
