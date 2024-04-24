@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobb</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <script src="js/main.js" type="module"></script>
+</head>
+<body>
+    <header id="scroll_function">
+        <section class="header-section">
+            <h2 class="logo" tabindex="0" onclick='window.location.href = "./index.html"'>webbtjänster</h2>
+        </section>
+        <button class="menuBtn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>
+        <nav id="nav-menu">
+            <button class="menuBtn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">stäng</span>
+            </button>
+            <ul>
+                <li class="links"><a class="action" href="#">Startsida</a></li>
+                <li class="links"><a href="/src/html/add_data.html">Add-list</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Jobb List</h1>
+        <div id="created_list"></div>
+    </main>
+    
+</body>
+</html>
