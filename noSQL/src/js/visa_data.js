@@ -4,10 +4,16 @@ const dataShow = document.getElementById("created_list");
 function visaData(rows) {
     dataShow.innerHTML = ""; 
 
+    if (!Array.isArray(rows)) {
+        console.error("Data is missing or not in the expected format.");
+        return;
+    }
+
     rows.forEach(element => {
-        const rowId = element.id;
+        console.table(element);
+        const rowId = element._id;
         dataShow.innerHTML += `
-        <ul class="unorderList" id="row-${element.id}">
+        <ul class="unorderList" id="row-${element._id}">
             <span>
             <li>Företagsnamn: ${element.company_name}</li>
             <li>Jobbtitel: ${element.job_title}</li>
@@ -16,7 +22,7 @@ function visaData(rows) {
             <li>Slutdatum: ${new Date(element.end_date).toLocaleDateString()}</li>
             <li>Beskrivning: ${element.description}</li>
             </span>
-            <input type="button" class="del_BTN" data-row-id="${rowId}" id="row-${element.id}" value="Radera"> 
+            <input type="button" class="del_BTN" data-row-id="${rowId}" id="row-${element._id}" value="Radera"> 
         </ul>
         <br>
         `;

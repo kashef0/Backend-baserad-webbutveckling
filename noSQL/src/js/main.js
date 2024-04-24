@@ -3,8 +3,8 @@ import { addData } from './add_data.js';
 import { deleteData } from './del_data.js';
 import { visaData } from './visa_data.js';
 import { toggleMenu } from './navmenu.js';
-const url = "https://backend-baserad-webbutveckling-9.onrender.com/jobbs";
 
+const url = "https://backend-baserad-webbutveckling-9.onrender.com/company";
 
 document.addEventListener('DOMContentLoaded', async function() {
     const form = document.getElementById('add_data');
@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', async function() {
             method: "GET"
         });
         const data = await response.json();
-        visaData(data.rows);
+
+        visaData(data);
 
         document.querySelectorAll(".del_BTN").forEach(button => {
             button.addEventListener('click', deleteData);
