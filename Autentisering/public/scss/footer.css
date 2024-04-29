@@ -1,0 +1,15 @@
+
+footer {
+    background-color: var(--header-background-color);
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    font-family: var(--main-font-family);
+}
+
+.footer-head, .footer-para {
+    font-size: .75em;
+    color: ghostwhite;
+    text-align: center;
+    padding-bottom: .50em;
+}

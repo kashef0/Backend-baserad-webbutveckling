@@ -1,0 +1,51 @@
+@import 'header.css';
+
+@media only screen and (min-width: 992px) {
+    .menuBtn {
+        display: none;
+    }
+    #open-menu {
+        display: none !important;
+    }
+    nav {
+        display: block !important;
+        position: static;
+        right: 0;
+        top: 0;
+        height: auto;
+        font-size: var(--second-font-size);
+        width: auto;
+    }
+
+    header nav ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    header nav .links {
+        display: inline;
+        padding: 1em 0;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    /* Övriga CSS-regler */
+}
+
+@media screen and (max-width: 800px) {
+    /* Övriga CSS-regler */
+}
+
+@media screen and (max-width: 700px) {
+    /* Övriga CSS-regler */
+}
+
+@media only screen and (max-width: 500px) {
+    /* Övriga CSS-regler */
+}
+
+@media only screen and (max-width: 300px) {
+    /* Övriga CSS-regler */
+}

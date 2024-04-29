@@ -1,0 +1,41 @@
+<div class="container">
+    <fieldset id="loginForm" class="login form">
+        <h2 class="header">Login</h2>
+        <form action="#">
+            <label for="e-postadress">Ange din e-postadress:</label>
+            <input type="text" placeholder="Ange din e-postadress" id="e-postadress" autocomplete="username">
+            <label for="password">Ange ditt lösenord:</label>
+            <input type="password" id="password" placeholder="Ange ditt lösenord" autocomplete="current-password">
+            <a href="#">Glömt ditt lösenord?</a>
+            <label for="login" style="display: none;">login</label>
+            <input type="button" id="login" class="button" value="Login">
+        </form>
+        <section class="signup">
+            <h4 class="signup">Har du inget konto?</h4>
+            <p id="bli-medlem">Bli Medlem</p>
+        </section>
+    </fieldset>
+    <fieldset id="registrationForm" class="registration form">
+        <h2 class="header">Bli Medlem</h2>
+        <form action="#">
+            <label for="name">Ange ditt Namn:</label>
+            <input type="text" id="name" placeholder="John Depp" autocomplete="name">
+            <label for="adress">Ange din adress:</label>
+            <input type="text" id="adress" placeholder="Dröttningsgatan 5" autocomplete="address-level1">
+            <label for="tel">Ange din tel:</label>
+            <input type="tel" id="tel" placeholder="076 233 456 3" autocomplete="tel">
+            <label for="e-mail">Ange din e-postadress:</label>
+            <input type="text" id="e-mail" placeholder="john.depp@example.com" autocomplete="username">
+            <label for="passwords">Skapa ett lösenord:</label>
+            <input type="password" id="passwords" placeholder="Skapa ett lösenord" autocomplete="new-password">
+            <label for="password2">Bekräfta ditt lösenord:</label>
+            <input type="password" id="password2" placeholder="Bekräfta ditt lösenord" autocomplete="new-password">
+            <label style="display: none;" for="Medlem">Bli Medlem</label>
+            <input type="button" id="Medlem" class="button" value="Bli Medlem">
+        </form>
+        <section class="signup">
+            <h4 class="signup">Har du redan ett konto?</h4>
+            <p id="loginKlick">Login</p>
+        </section>
+    </fieldset>
+</div>
