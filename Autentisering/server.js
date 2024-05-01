@@ -12,14 +12,6 @@ app.use(bodyParser.json());
 
 
 
-// connect to mongoDB
-mongoose.set("strictQuery", false);
-mongoose.connect(process.env.DATEBASE).then(() => {
-    console.log("connected to MongoDb...");
-}).catch((error) => {
-    console.log("error connecting to database..." + error);
-});
-
 app.use("/api", authRoutes);
 
 app.set("views", path.join(__dirname, "views"));

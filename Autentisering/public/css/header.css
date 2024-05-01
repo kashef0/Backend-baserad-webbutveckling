@@ -22,6 +22,7 @@ header {
 }
 
 nav {
+    
     background-color: var(--header-background-color);
     font-size: 1.3em;
     display: none;
