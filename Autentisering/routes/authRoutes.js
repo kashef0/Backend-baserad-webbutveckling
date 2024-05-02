@@ -20,9 +20,10 @@ const User = require("../models/user");
 
 
 // add new user
-router.post("/register", async (req, res) => {
+router.post("/signup", async (req, res) => {
     try {
         const { username, email, password } = req.body;
+        
 
         // validate input
         if (!username || !email || !password) {
@@ -36,6 +37,7 @@ router.post("/register", async (req, res) => {
         // correct - save user
         const user = new User({ username, email, password });
         await user.save();
+        res.render("/login");
         res.status(201).json({message: "User registered successfully"});
     } catch (error) {
         res.status(500).json({error: "server error"});
@@ -60,9 +62,11 @@ router.post("/login", async(req, res) => {
         const payload = { username: user.username };
         const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
         res.status(200).json({ message: "user logged in!", token });
+        res.render("/home");
     } catch (error) {
         res.status(500).json({ error: "server error" });
     }
+    
 });
 
 
