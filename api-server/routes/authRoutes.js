@@ -4,12 +4,13 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+const config = require('../routes/config'); 
 require("dotenv").config();
 
 
 // connect to mongoDB
 mongoose.set("strictQuery", false);
-mongoose.connect(process.env.DATEBASE).then(() => {
+mongoose.connect(process.env.DATEBASE || config.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log("connected to MongoDb...");
 }).catch((error) => {
     console.log("error connecting to database..." + error);
