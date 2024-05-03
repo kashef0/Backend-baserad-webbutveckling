@@ -10,7 +10,7 @@ require("dotenv").config();
 
 // connect to mongoDB
 mongoose.set("strictQuery", false);
-mongoose.connect(process.env.DATEBASE || config.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect(process.env.DATEBASE || config.DB_URI,).then(() => {
     console.log("connected to MongoDb...");
 }).catch((error) => {
     console.log("error connecting to database..." + error);
