@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const config = require('../routes/config'); 
+const config = require('./routes/config'); 
 require("dotenv").config();
 
 
