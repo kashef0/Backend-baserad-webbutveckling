@@ -1,16 +1,16 @@
 // 
 
 const express = require("express");
-const path = require("path");
+const cors = require('cors');
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const authRoutes = require("./routes/authRoutes");
 require("dotenv").config();
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
-app.use(express.urlencoded({extended:false}));
+
 
 
 app.use("/api", authRoutes);
@@ -33,10 +33,6 @@ function authenticateToken(req, res, next) {
     });
 }
 
-
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
-app.use(express.static("public"));
 const port = process.env.port | 3000;
 
 app.get("/home", (req, res) => {
@@ -51,12 +47,7 @@ app.get("/signup", (req, res) => {
 });
 
 
-// app.get("/about", (req, res) => {
-//     res.render("about");
-// });
 
-
-// starta app
 
 app.listen(port, () => {
     console.log("server started on port " + port);
