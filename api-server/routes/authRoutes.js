@@ -55,12 +55,12 @@ router.post("/login", async(req, res) => {
         const user = await User.findOne({ username });
 
         // kontrollera om user finns and password är korrekt
-        if (!user || !(await user.checkPassword(password))) {
+        if (!user || !(await user.comparePassword(password))) {
             return res.status(401).json({ error: "Invalid username or password" });
         }
-        const payload = { username: username };
+        const payload = { username: user.username };
         const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
-        res.status(200).json({ message: "user logged in!", token });
+        res.status(200).json({ message: "user logged in!", token: token });
     } catch (error) {
         res.status(500).json({ error: "server error" });
     }
