@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     email:{
         type: String,
         required: true,
-        unique: true,
+        unique: true
     },
     password: {
         type: String,
@@ -62,7 +62,7 @@ userSchema.statics.register = async (username, email, password) => {
     } catch (error) {
         throw error;
     }
-}
+};
 
 
 // login user
@@ -84,7 +84,7 @@ userSchema.statics.login = async function (username, password) {
     } catch (error) {
         throw error;
     }
-}
+};
 
 
 module.exports = mongoose.model("User", userSchema);
