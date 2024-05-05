@@ -27,24 +27,29 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre("save", async function (next) {
-    const user = this;
+    // const user = this;
 
-    if (!user.isModified("password")) {
-        return next();
-    }
-
+    
     try {
-        const salt = await bcrypt.genSalt(10);
-        const hashPassword = await bcrypt.hash(user.password, salt);
-        user.password = hashPassword;
+        if (this.isNew || this.isModified("password")) {
+            // const salt = await bcrypt.genSalt(10);
+            const hashPassword = await bcrypt.hash(this.password, 10);
+            this.password = hashPassword;
+            // return next();
+        }
         next();
     } catch (error) {
         next(error);
     }
 });
 
-userSchema.methods.comparePassword = async function (guess) {
-    return await bcrypt.compare(guess, this.password);
+userSchema.methods.comparePassword = async function (password) {
+    try {
+        return await bcrypt.compare(password, this.password);
+    } catch (error) {
+        throw error;
+    }
+    
 };
 
 
