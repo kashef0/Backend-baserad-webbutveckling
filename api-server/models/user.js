@@ -43,17 +43,11 @@ userSchema.pre("save", async function (next) {
     }
 });
 
-// userSchema.methods.comparePassword = async function (guess) {
-//     return await bcrypt.compare(guess, this.password);
-// };
-
-userSchema.methods.comparePassword = async function (password) {
-    try {
-        return await bcrypt.compare(password, this.password);
-    } catch (error) {
-        throw error;
-    }
+userSchema.methods.comparePassword = async function (guess) {
+    return await bcrypt.compare(guess, this.password);
 };
+
+
 // regiter user
 userSchema.statics.register = async (username, email, password) => {
     try {
