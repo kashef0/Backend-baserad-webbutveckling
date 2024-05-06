@@ -39,6 +39,15 @@ function authenticateToken(req, res, next) {
 
 const port = process.env.PORT | 3000;
 
+app.get("/protected.html", (req, res) => {
+    const token = req.query.token;
+    if (!token) {
+        return res.redirect("/login");
+    }
+    res.sendFile(__dirname + "/protected.html");
+});
+
+
 app.get("/home", (req, res) => {
     res.render("home");
 });
