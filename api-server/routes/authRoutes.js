@@ -60,7 +60,6 @@ router.post("/login", async(req, res) => {
         }
         const payload = { username: user.username };
         const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
-        res.render(`/protected.html?token=${token}`);
         res.status(200).json({ message: "user logged in!", token: token });
     } catch (error) {
         console.error(error);
