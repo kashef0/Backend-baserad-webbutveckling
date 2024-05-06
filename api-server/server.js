@@ -16,8 +16,7 @@ app.use(bodyParser.json());
 app.use("/api", authRoutes);
 
 app.get("/api/protected", authenticateToken, (req, res) => {
-    res.render("protected");
-    // res.json({message: "shyddad route! "});
+    res.json({message: "shyddad route! "});
 });
 
 function authenticateToken(req, res, next) {
