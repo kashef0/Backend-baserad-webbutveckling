@@ -16,7 +16,8 @@ app.use(bodyParser.json());
 app.use("/api", authRoutes);
 
 app.get("/api/protected", authenticateToken, (req, res) => {
-    res.json({message: "shyddad route! "});
+    res.render("protected");
+    // res.json({message: "shyddad route! "});
 });
 
 function authenticateToken(req, res, next) {
@@ -38,14 +39,6 @@ function authenticateToken(req, res, next) {
 }
 
 const port = process.env.PORT | 3000;
-
-app.get("/protected.html", (req, res) => {
-    const token = req.query.token;
-    if (!token) {
-        return res.redirect("/login");
-    }
-    res.sendFile(__dirname + "/protected.html");
-});
 
 
 app.get("/home", (req, res) => {
