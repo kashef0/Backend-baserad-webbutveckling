@@ -97,7 +97,7 @@ body {
 
 .form input.button {
     color: #fff;
-    background: #0b556e;
+    background: #04AA6D;
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 1px;
@@ -107,7 +107,7 @@ body {
 }
 
 .form input.button:hover {
-    background: #34b5a8;
+    background: tomato;
     color: black;
 }
 
