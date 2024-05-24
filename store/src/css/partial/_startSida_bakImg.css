@@ -1,0 +1,40 @@
+/* ............//// bakgrund img ////......... */
+
+.showcase-area {
+    height: 50vh;
+    background: linear-gradient(rgba(240, 240, 240, 0.144),
+            rgba(255, 255, 255, 0.336)),
+        url(/src/images/bakgrund5.jpg);
+        background-position: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+
+#showcase{
+    height: 500px;
+}
+
+
+.showcase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.6rem;
+    row-gap: 20px;
+}
+
+.main-title {
+    text-transform: uppercase;
+    margin-top: 1.5em;
+    font-size: 4rem;
+    color: rgb(214 94 8);
+}
+
+.showcase-container p{
+    color: white;
+}

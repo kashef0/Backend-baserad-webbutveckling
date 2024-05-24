@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="imageInput" name="image" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="downloadLinkContainer" style="display:none;">
+        <h2>Download your image</h2>
+        <a id="downloadLink" href="" target="_blank">Download Image</a>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            const imageFile = document.getElementById('imageInput').files[0];
+            formData.append('image', imageFile);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    const downloadLink = document.getElementById('downloadLink');
+                    const downloadLinkContainer = document.getElementById('downloadLinkContainer');
+                    downloadLink.href = result.url;
+                    downloadLinkContainer.style.display = 'block';
+                    alert('Image uploaded successfully. You can download it using the link below.');
+                } else {
+                    alert('Failed to upload image: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error uploading image:', error);
+                alert('Error uploading image');
+            }
+        });
+    </script>
+</body>
+</html>

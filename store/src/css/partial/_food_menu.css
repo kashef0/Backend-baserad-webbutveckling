@@ -1,0 +1,107 @@
+/* .........../Food Menu/............ */
+
+
+.food-menu-heading {
+    text-align: center;
+    font-size: 3.4rem;
+    color: black;
+    font-weight: 700;
+    margin-bottom: .75em;
+}
+
+.food-menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 50px 0px 30px 0px; */
+    border-radius: 10px;
+}
+
+.food-menu-container img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.food-menu-item {
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+    /* font-size: calc((1.6em + 1vw) / 1.5); */
+}
+
+.food-description {
+    margin: auto 1.5rem;
+}
+
+.food-description h2 {
+    font-size: calc((1.8em + 1.5vw) / 1.5);
+    font-weight: 700;
+    color: #444;
+}
+
+.food-description p {
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.food-description .food-price {
+    color: #117964;
+    font-weight: 700;
+}
+
+#all_menu_list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0 30px;
+    margin: 1em auto;
+
+}
+
+.pizza_list, .pasta_list, .starters_list {
+    padding: 1em;
+    background-color: var(--header-background-color);
+    color: white;
+    width: 80%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    /* font-size: calc((1.6em + 1vw) / 1.5); */
+}
+.pizza_list:hover, .pasta_list:hover, .starters_list:hover {
+    background-color: #c33d3d;
+}
+
+.menu_reburik {
+    /* font-size: calc((1.1em + 1.2vw) / 1.5); */
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+    background-color: var(--header-background-color);
+    border-radius: 5px;
+    margin-bottom: 1em
+    
+}
+
+.menu_reburik a {
+    text-decoration: none;
+    color: white;
+    cursor: none;
+    font-size: calc((1.1em + 1.2vw) / 1.5);
+}
+
+.list_link {
+    font-size: calc((1.1em + 1.2vw) / 1.5);
+    font-weight: 600;
+}
+
+.food-description .text {
+    font-weight: 700;
+    font-size: calc((1.2em + 1vw) / 1.5);
+}

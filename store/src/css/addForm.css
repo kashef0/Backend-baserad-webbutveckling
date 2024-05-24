@@ -1,0 +1,487 @@
+@import 'header.css';
+@import 'footer.css';
+@import 'partial/_startSida_bakImg.css';
+/* @import 'partial/_food_menu.css'; */
+@import 'partial/_mediaQuery.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+* {
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+
+.container { 
+    width: 48%;
+    padding: 2%;
+    margin: 1em auto;
+    max-width: 960px; 
+    background-color: #fff;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: .3em;
+}
+
+.btn {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    margin-left: .35em;
+    padding: 0 1em;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: .25rem;
+    border: 0;
+    text-decoration: none;
+    color: #fff;
+    background-color: #12831f;
+}
+
+.btn:hover {
+    background-color: #802D00;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="time"], textarea {
+    padding: 10px 0;
+    border-radius: .25rem;
+    border: 2px solid #ccc;
+    height: 25px;
+    margin-left: 5px;
+    width: 90%;
+    transition: 0.5s;
+    outline: none;
+    text-indent: 3px;
+}
+
+input[type="text"]:focus {
+    border: 2px solid rgb(213, 52, 23);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: .5em;
+    width: 25%;
+    font-size: calc(.5em + 50%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.inputSpan,
+#error {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding: .5em;
+    justify-content: end;
+}
+
+#error {
+    color: red;
+}
+
+#company_name_error,
+#job_title_error,
+#location_error,
+#description_error,
+#Startdatum_error {
+    color: red;
+    padding: 5px 0 0 5px;
+}
+
+h1, .booking_rubrik {
+    text-align: center;
+    background-color: wheat;
+    padding: 20px;
+    font-size: 2.2em;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+
+#test {
+    font-family: 'Roboto', sans-serif;
+}
+
+#logoutBtn {
+    cursor: pointer;
+}
+
+#message_tranlation {
+    overflow: hidden;
+    padding: 10px;
+    background-color: #2C363F;
+}
+
+.message_contaner {
+    width: 100%;
+    overflow: hidden;
+    font-size: 1.4em;
+}
+
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.message_contaner {
+    animation: moveRight 10s linear  infinite;
+    color: red;
+    
+}
+
+#loadingMessage {
+    font-size: 2em;
+}
+
+
+
+
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.main_container {
+    width: 100%;
+    display: flex;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #111;
+    position: relative;
+    /* height: 100%; */
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: #818181;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    
+}
+/* style display_menu */
+#display_menu {
+    display: flex;
+    padding: 0;
+}
+
+#showData {
+    overflow-y: auto;
+    max-height: 700px;
+    width: 48%;
+}
+
+.food-menu-container {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.food-description {
+    border: .5px solid black;
+    width: 80%;
+}
+
+.menu_reburik {
+    padding: .5em;
+    background-color:#2C363F;
+    width: 80%;
+}
+
+.menu_reburik a {
+    cursor: none;
+    color: white;
+    text-decoration: none;
+}
+
+
+.content h1 {
+    /* font-size: 24px; */
+    margin-bottom: 20px;
+}
+
+.content p {
+    /* font-size: 16px; */
+    margin-bottom: 10px;
+}
+
+.content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+}
+
+/* ............................ register form styling*/
+
+.register_container {
+    /* position: relative; */
+    /* left: 50%;
+    transform: translate(-50%, 0%); */
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    border-radius: 7px;
+    /* box-shadow: rgb(0 0 0 / 55%) 17px -13px 10px;; */
+    margin: 6em 0 2em 0;
+    
+}
+
+
+/* .registration {
+    display: none;
+} */
+
+
+.register_container .form {
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.form header {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form input {
+    height: 60px;
+    width: 90%;
+    padding: 0 15px;
+    font-size: 17px;
+    margin-bottom: 1.3rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+.form input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form a {
+    font-size: 16px;
+    color: #0b556e;
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.form input.button {
+    color: #fff;
+    background: #0b556e;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 1.7rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.form input.button:hover {
+    background: #34b5a8;
+    color: black;
+}
+
+.signup {
+    font-size: 17px;
+    text-align: center;
+    display: flex;
+}
+
+.signup p {
+    color: #0b556e;
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 5px;
+    font-weight: 500;
+}
+
+.signup p:hover {
+    text-decoration: underline;
+}
+
+
+/* ..............................display_admin */
+
+.display_admin {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.header_admin {
+    padding: .75em .75em .75em 0;
+}
+.main_admin_container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 0 .5em;
+    display: flex;
+
+}
+
+#admin-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.admin-item {
+    flex: 1 1 200px;
+    background-color: whitesmoke;
+    padding: .85em;
+    border: 1px solid black;
+}
+
+.admin_rubrik {
+    padding: .5em;
+}
+
+/* ............................bookings */
+
+#display_booking {
+    display: flex;
+    width: auto;
+}
+
+.booknings_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#booking {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: .5em;
+    justify-content: center;
+    overflow-y: auto;
+    max-height: 960px;
+    height: auto;
+    padding-top: 1em;
+}
+
+.elem-group {
+    display: flex;
+}
+.elem-group .takeout_label {
+    width: 60%;
+    font-size: 1em;
+    display: flex;
+}
+.elem-group select {
+    height: fit-content;
+    float: left;
+}
+
+.booking-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+}
+
+.booking-description {
+    border: 1px solid black;
+    width: 100%;
+    padding: .5em;
+    word-break: break-word;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+
+    #display_menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #showData, .food-description,
+    .menu_reburik, .container {
+        width: 90%;
+    }
+
+    .display_admin {
+        flex-wrap: wrap;
+    }
+
+    #display_booking {
+        flex-wrap: wrap;
+    }
+
+    .booking_form {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+.client {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+iframe {
+    width: 70%;
+    height: 60vh;
+}
+

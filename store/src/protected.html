@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/addForm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/src/js/main.js" type="module"></script>
+    
+    
+    <title>Autentisering</title>
+</head>
+
+<body>
+    <section class="showcase-area" id="showcase">
+        <div class="showcase-container">
+            <h1 class="main-title" id="home">Välkomen till Dashboarden</h1>
+            <p>Här kan du hantera tjänster</p>
+        </div>
+    </section>
+    <aside class="main_container">
+        <div class="sidebar">
+            <a href="#home" class="active"><i class="fa fa-fw fa-home"></i>dashboard</a>
+            <a href="#add_menu"><i class="fa fa-plus fa-fw"></i>lägg till menu</a>
+            <a href="#Add_admin"><i class="fa fa-user-plus fa-fw"></i>lägg till admin</a>
+            <a href="#hanter-bokningar"><i class="fa fa-fw fa-wrench"></i> hantera bokningar</a>
+            <!-- <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+            <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a> -->
+            <a href="#" id="logoutBtn"><i class="fa fa-sign-out fa-fw"></i> logout</a>
+        </div>
+        <div class="content">
+            <h1>Välkommen till Dashboarden</h1>
+            <p>Dashboarden är ditt huvudnav för att hantera och övervaka olika aspekter av din applikation. Här kan du:
+            </p>
+            <ul>
+                <li>Se och hantera dina mat menu</li>
+                <li>Lägga till nya administratörer</li>
+                <li>Se och hantera dina bokningar</li>
+            </ul>
+            <p>Vi strävar efter att göra det enkelt och effektivt för dig att hålla koll på allt från en central plats. Om
+                du har några frågor eller behöver hjälp, tveka inte att kontakta oss.</p>
+        </div>
+    </aside>
+    <h1 id="add_menu">hantera mat menu</h1>
+    <div class="content" id="display_menu">
+        <!-- <h2>Lägg till menu</h2> -->
+        <form id="add_data" class="container">
+            <span class="inputSpan">
+                <label for="id">ID (för uppdatering/radering): </label>
+                <input type="text" id="id" name="id" placeholder="Ange ID för menu du vill Uppdatera eller Radera">
+                <span id="id_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="title">Title: </label>
+                <input type="text" id="title" name="title" placeholder="Title">
+                <span id="title_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="descrip">Description: </label>
+                <textarea id="descrip" name="descrip" placeholder="Description" rows="20" cols="80" form="add_data"></textarea>
+                <span id="descrip_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="category">Category: </label>
+                <input type="text" id="category" name="category" placeholder="Category">
+                <span id="category_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="price">Price: </label>
+                <input type="number" id="price" name="price" placeholder="Price">
+                <span id="price_error" class="error"></span>
+            </span>
+                <button type="submit" class="btn">Lägg till</button>
+                <button id="update_data" class="btn" type="button">Uppdatera</button>
+                <button id="delete_data" class="btn" type="button">Radera</button>
+        </form>
+        <div id="showData">
+            <div class="food-menu-container container" id="pizza" style="width: 100%;">
+                <h3 class="menu_reburik"><a href="#pizza">PIZZA</a></h3>
+            </div>
+            <div class="food-menu-container container" id="pasta" style="width: 100%; box-shadow: 17px 0px 7px #0000008c">
+                <h3 class="menu_reburik"><a href="#pasta">pasta</a></h3>
+            </div>
+            <div class="food-menu-container container" id="starters" style="width: 100%; box-shadow: 17px 0px 7px #0000008c"><br>
+                <h3 class="menu_reburik"><a href="#starters">förrätter</a></h3>
+            </div>
+        </div>
+    </div>
+    <div class="display_admin">
+        <div class="register_container">
+            <fieldset id="registrationForm" class="registration form">
+                <h2 class="header_admin" id="Add_admin">Lägg till en ny administratör</h2>
+                <form method="post" id="register-form">
+                    <label for="name">Ange Namn:</label>
+                    <input type="text" id="name" name="username" placeholder="John Depp" autocomplete="name">
+                    <label for="e-mail">Ange e-mail:</label>
+                    <input type="email" id="e-mail" name="email" placeholder="john.depp@example.com"
+                        autocomplete="username">
+                    <label for="passwords">Skapa ett lösenord:</label>
+                    <input type="password" name="password" id="passwords" placeholder="Skapa ett lösenord"
+                        autocomplete="new-password"><span id="error-message" style="color:red;"></span>
+                    <label style="display: none;" for="Medlem">Bli Medlem</label>
+                    <input type="submit" id="Medlem" class="button" value="registrera">
+                </form>
+            </fieldset>
+        </div>
+        <div class="main_admin_container">
+            <h2 class="admin_rubrik">visa administratörer</h2>
+            <div id="admin-container"></div>
+        </div>
+    </div>
+    <h2 class="booking_rubrik" id="hanter-bokningar">Hantera Bokningar</h2>
+    <div class="content" id="display_booking">
+        <form id="bookning_hantering" class="container booking_form">
+            <span class="inputSpan">
+                <label for="_id">ID (för uppdatering/radering): </label>
+                <input type="text" id="_id" name="_id" placeholder="Ange ID för menu du vill Uppdatera eller Radera">
+                <span id="id_error_booking" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="name">name: </label>
+                <input type="text" id="customer_name" name="name" placeholder="name">
+                <span id="title_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="date">datum: </label>
+                <input type="date" id="customer_date" role="textbox" name="date">
+                <span id="descrip_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="category">tid: </label>
+                <input type="time" id="customer_category" name="time">
+                <span id="category_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="tel">Tel: </label>
+                <input type="tel" id="customer_tel" name="tel" placeholder="telefon nummer">
+                <span id="price_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="email">email: </label>
+                <input type="email" id="customer_email" name="email" placeholder="ange email">
+                <span id="price_error" class="error"></span>
+            </span>
+            <span class="inputSpan">
+                <label for="people">antal_people: </label>
+                <input type="number" id="customer_people" name="Antal_people" placeholder="hur många personer...">
+                <span id="price_error" class="error"></span>
+            </span>
+            <span class="elem-group">
+                <label for="takeout" class="takeout_label">Vill du ta med dig din beställning?</label>
+                <select id="customer_takeout" name="takeout">
+                    <option value="Nej">Nej</option>
+                    <option value="Ja">Ja</option>
+                </select>
+            </span>
+            <br>
+            <hr>
+            <br>
+            <label for="message">Något annat?</label>
+            <textarea id="customer_message" name="message" placeholder="Berätta för oss allt annat som kan vara viktigt."></textarea>
+            <button id="update_booking" class="btn" type="button">Uppdatera</button>
+            <button id="delete_booking" class="btn" type="button">Radera</button>
+        </form>
+        <div id="booking">
+    
+        </div>
+    </div>
+    <!-- <div class="client">
+        <iframe src="http://localhost:1234" frameborder="0"></iframe>
+    </div> -->
+    <div id="test"></div>
+    <div id="skyddad" style="display:none;"></div>
+    
+</body>
+
+</html>

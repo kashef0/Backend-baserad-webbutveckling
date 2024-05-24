@@ -1,0 +1,60 @@
+
+/* ........./ Rekommendation /.......... */
+
+#Rekommendation {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.Rekommendation-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: black;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.Rekommendation-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    column-gap: 20px;
+    font-size: calc((1em + 1vw) / 1.5);
+    font-weight: 700;
+    /* font-family: var(--second-font-family); */
+}
+
+.Rekommendation-box .checked {
+    color: #ff9529;
+}
+
+.Rekommendation-box .Rekommendation-text {
+    margin: 1rem 0;
+    color: #444;
+    font-size: calc((1.1em + 1vw) / 1.5);
+}
+
+.Rekommendation-box {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.customer-photo img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.customer-photo p {
+    padding-top: 20px;
+}

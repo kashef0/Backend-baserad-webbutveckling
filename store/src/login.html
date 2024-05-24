@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/login.css">
+    <script src="/src/js/login&reg/login.js" type="module"></script>
+    <title>Autentisering</title>
+</head>
+
+<body>
+    <header id="navHeader">
+        <button id="menuButton" class="menuBTN">
+            <span>></span>
+        </button>
+        <ul class="nav">
+                <li><a href="/src/index.html">Home</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="backgroundImage"></div>
+        <div class="container">
+            <fieldset id="loginForm1" class="login form">
+                <h2 class="header">Login</h2>
+                <form id="loginForm">
+                    <label for="username">Ange din username:</label>
+                    <input type="text" placeholder="Ange ditt användare namn" id="username" name="username"
+                        autocomplete="username"><span class="error-message"></span>
+                    <label for="login-password">Ange ditt lösenord:</label>
+                    <input type="password" id="login-password" placeholder="Ange ditt lösenord" name="password"
+                        autocomplete="current-password">
+                        <span class="error-message"></span>
+                    <a href="#">Glömt ditt lösenord?</a>
+                    <label for="login" style="display: none;">login</label>
+                    <input type="submit" id="login" class="button" value="Login">
+                </form>
+                
+                <!-- <section class="signup">
+            <h4 class="signup">Har du inget konto?</h4>
+            <p id="bli-medlem">Bli Medlem</p>
+        </section> -->
+            </fieldset>
+            <div id="protected-content" style="display: none;">
+                <h1>Skyddad sida</h1>
+                <p>Välkommen till den skyddade sidan!</p>
+                <button id="logoutBtn" class="button">Logga ut</button>
+            </div>
+        </div>
+        <div id="protected-content" style="display: none;">
+            <h1>Skyddad sida</h1>
+            <p>Välkommen till den skyddade sidan!</p>
+            <button id="logoutBtn" class="button">Logga ut</button>
+        </div>
+    </main>
+    <footer class="modify">
+        <h3 class="footer-head">Projekt uppgift för kursen DT207G , Backend-baserad
+            webbutveckling</h3>
+        <p class="footer-para">© Copyright Mohamed Abokashef, 2024</p>
+    </footer>
+    
+</body>
+
+</html>

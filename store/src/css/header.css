@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+:root {
+    --bars-color: #2C363F;
+    --second-font-family: 'Roboto', sans-serif;
+    --header-background-color: #2e3745;
+    --main-font-family: 'Nanum Gothic', sans-serif;
+    --hover-color: #c42b2b;
+}
+
+header {
+    position: relative;
+    background-color: var(--header-background-color);
+}
+
+header ul.nav {
+    overflow: hidden;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+header ul.nav li {
+    position: relative;
+    float: left;
+    width: 20%;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+header ul.nav li a {
+    display: block;
+    height: 3.1em;
+    opacity: 0;
+    font-weight: 400;
+    font-size: 1.13em;
+    font-family: "Roboto Condensed", sans-serif;
+    line-height: 3.1em;
+    color: #848e92;
+    text-decoration: none;
+    text-align: center;
+    cursor: default;
+    transition: all 0.25s ease;
+}
+
+header ul.nav li a:hover:not(.active) {
+    color: #fff;
+    background-color: #222b2f;
+}
+
+header ul.nav li a.active {
+
+    color: #fff;
+    background-color: #222b2f;
+    cursor: pointer;
+}
+
+header.active ul.nav li a {
+    height: 4.5em;
+    opacity: 1;
+    line-height: 4.5em;
+    cursor: pointer;
+}
+
+button.menuBTN {
+    position: absolute;
+    top: 2.8em; 
+    left: calc(25% - 2.8em); 
+    width: 4.6em;
+    height: 2.7em;
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: #38a6a6;
+    font-weight: 400;
+    font-size: 1.2em;
+    color: #fff;
+    border: none;
+    line-height: 2.5em;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    border-bottom-left-radius: 0.6em; 
+    border-bottom-right-radius: 0.6em; 
+    transition: all 0.25s ease;
+    z-index: 100;
+}
+
+button.menuBTN:hover {
+    height: 3.5em; 
+}
+
+button.menuBTN span {
+    display: block;
+    transform: rotate(90deg);
+    transition: all 0.25s ease;
+}
+
+header.active button.menuBTN {
+    top: 4.2em;
+    background-color: #256f6f;
+}
+
+header.active button.menuBTN span {
+    transform: rotate(270deg);
+}
+
+@media screen and (max-width: 600px) {
+    header ul.nav li {
+        float: none;
+        width: 100%;
+    }
+
+    header ul.nav li a {
+        height: 0;
+    }
+
+    header.active ul.nav li a {
+        height: 3.75em;
+        line-height: 3.75em; 
+        border-bottom: 1px solid #222b2f;
+    }
+
+    button.menuBTN {
+        top: 0;
+        left: 1em;
+    }
+
+    header.active button.menuBTN {
+        top: 14em;
+    }
+}

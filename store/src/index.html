@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/main.css">
+    <title>Document</title>
+    <script src="/src/js/index.js" type="module"></script>
+</head>
+
+<body>
+    <header id="navHeader">
+        <button id="menuButton" class="menuBTN">
+            <span>></span>
+        </button>
+        <ul class="nav">
+            <li><a href="#home" class="active">Startsida</a></li>
+            <li><a href="#food">Kategori</a></li>
+            <!-- <li><a href="#food-menu">Meny</a></li> -->
+            <li><a href="#about">kontakta</a></li>
+            <li style="float: right;"><a href="/src/login.html">login</a></li>
+        </ul>
+    </header>
+    <title>Restraunt</title>
+
+    <section class="showcase-area" id="showcase">
+        <div class="showcase-container">
+            <h1 class="main-title" id="home">ÄT RÄTT MAT</h1>
+            <p>Ät hälsosamt, vi bryr oss om din hälsa.</p>
+            <a href="#food-menu" class="btn btn-primary">meny</a>
+            <a href="#contact" class="btn btn-primary">Boka Bord</a>
+        </div>
+    </section>
+
+    <section id="food">
+        <h2>TYPER AV MAT</h2>
+        <div class="food-container container">
+            <div class="food-type fruite">
+                <div class="img-container">
+                    <img decoding="async" src="/src/images/pizza.jpg" alt="pizza" />
+                    <div class="img-content">
+                        <h3>pizza</h3>
+                        <a href="https://en.wikipedia.org/wiki/Pizza" class="btn btn-primary" target="blank"
+                            rel="noopener">lär dig mer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type vegetable">
+                <div class="img-container">
+                    <img decoding="async" src="/src/images/pasta.jpg" alt="pasta" />
+                    <div class="img-content">
+                        <h3>Pasta</h3>
+                        <a href="https://it.wikipedia.org/wiki/Pasta" class="btn btn-primary" target="blank"
+                            rel="noopener">lär dig mer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type grin">
+                <div class="img-container">
+                    <img decoding="async" src="/src/images/snack.jpg" alt="snack" />
+                    <div class="img-content">
+                        <h3>förrätt</h3>
+                        <a href="https://en.wikipedia.org/wiki/Hors_d%27oeuvre" class="btn btn-primary" target="blank"
+                            rel="noopener">lär dig mer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="food-menu">
+        <h2 class="food-menu-heading">Mat meny</h2>
+        <div id="all_menu_list">
+            <a href="#pizza" class="pizza_list">
+                <p class="list_link">Pizza</p>
+            </a>
+            <a href="#pasta" class="pasta_list">
+                <p class="list_link">Pasta</p>
+            </a>
+            <a href="#starters" class="starters_list">
+                <p class="list_link">förrätter</p>
+            </a>
+        </div>
+
+
+        <div class="food-menu-container container" id="pizza" style="width: 100%;">
+            <h3 class="menu_reburik"><a href="#pizza">PIZZA</a></h3>
+        </div>
+        <div class="food-menu-container container" id="pasta" style="width: 100%; box-shadow: 17px 0px 7px #0000008c">
+            <h3 class="menu_reburik"><a href="#pasta">pasta</a></h3>
+        </div>
+        <div class="food-menu-container container" id="starters" style="width: 100%; box-shadow: 17px 0px 7px #0000008c"><br>
+            <h3 class="menu_reburik"><a href="#starters">förrätter</a></h3>
+
+        </div>
+    </section>
+    <section id="Rekommendation">
+        <h2 class="Rekommendation-title">Vad våra kunder säger</h2>
+        <div class="Rekommendation-container container">
+            <div class="Rekommendation-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img decoding="async" src="/src/images/griffen.jpg" alt="Stewie_Griffin" />
+                        <p class="customer-name">Stewie_Griffin</p>
+                    </div>
+                </div>
+                <p class="Rekommendation-text">
+                    Jag besökte [Restaurangens Namn] för första gången igår och jag måste säga att jag är otroligt imponerad.
+                </p>
+            </div>
+            <div class="Rekommendation-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img decoding="async" src="/src/images/peter_griffin.webp" alt="peter_griffin" />
+                        <p class="customer-name">peter_griffin</p>
+                    </div>
+                </div>
+
+                <p class="Rekommendation-text">
+                    Jag besökte [Restaurangens Namn] och det var som att kliva in i en pizzadröm!, jag är inte druken
+                </p>
+            </div>
+            <div class="Rekommendation-box">
+                <div class="customer-detail">
+                    <div class="customer-photo">
+                        <img decoding="async" src="/src/images/Bart_Simpson_200px.png" alt="Bart_Simpson" />
+                        <p class="customer-name">Bart_Simpson</p>
+                    </div>
+                </div>
+                <p class="Rekommendation-text">
+                    Jag kommer definitivt att komma tillbaka och rekommendera denna restaurang till alla mina vänner och familj
+                </p>
+
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact-container container">
+            <div class="contact-img">
+                <img decoding="async" src="/src/images/form-image1.jpg" alt="" />
+            </div>
+
+            <form class="form-container" id="booking-form">
+                <h3 class="formCaption">Boka Bord</h3>
+                <div class="elem-group">
+                    <label for="name">Ditt fullständiga namn</label>
+                    <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern="[A-Z\sa-z]{3,20}">
+                    <span id="name_error"></span>
+                </div>
+                <div class="elem-group inlined">
+                    <label for="checkin-date">datum</label>
+                    <input type="date" id="checkin-date" name="checkin-date">
+                    <span id="date_error"></span>
+                </div>
+                <div class="elem-group inlined">
+                    <label for="checkin-time">tid</label>
+                    <input type="time" id="checkin-time" name="checkin-time">
+                    <span id="time_error"></span>
+                </div>
+                <div class="elem-group">
+                    <label for="phone">ditt telefone</label>
+                    <input type="tel" id="phone" name="visitor_phone" placeholder="071-348-3872">
+                    <span id="phone_error"></span>
+                </div>
+                <div class="elem-group">
+                    <label for="email">Ditt E-mail</label>
+                    <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com">
+                    <span id="email_error"></span>
+                </div>
+                <div class="elem-group">
+                    <label for="number">Antal personer</label>
+                    <input type="number" id="number" name="visitor_number" placeholder="Antal personer">
+                    <span id="antal_people_error"></span>
+                </div>
+                <div class="elem-group">
+                    <label for="takeout">Vill du ta med dig din beställning?</label>
+                    <select id="takeout" name="takeout">
+                        <option value="no">Nej</option>
+                        <option value="yes">Ja</option>
+                    </select>
+                </div>
+                <br>
+                <hr>
+                <label for="message">Något annat?</label>
+                <textarea id="message" name="visitor_message" placeholder="Berätta för oss allt annat som kan vara viktigt."></textarea>
+                <input type="submit" class="btn btn-primary" value="Skicka in">
+            </form>
+            
+        </div>
+    </section>
+    <footer class="modify">
+        <h3 class="footer-head">Projekt uppgift för kursen DT207G , Backend-baserad
+            webbutveckling</h3>
+        <p class="footer-para">© Copyright Mohamed Abokashef, 2024</p>
+    </footer>
+</body>
+
+</html>
