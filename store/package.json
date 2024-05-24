@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/*.html --open chrome",
-    "build": "parcel build src/*.html --no-source-maps"
+    "build": "parcel build --no-source-maps"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "keywords": [],
